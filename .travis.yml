@@ -4,7 +4,7 @@ install:
   - nuget restore ConsoleApplication4/ConsoleApplication4.sln
   - nuget install xunit.runners -Version 2.0.0 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release ConsoleApplication4/ConsoleApplication4.sln
-  - mono /home/travis/build/radkoncy/test-travis/testrunner/xunit.runners.2.0.0/tools/xunit.console.exe ./csharp-extensions-test/bin/Release/csharp-extensions-tests.dll
+  - xbuild /p:Configuration=build-mono-debug ConsoleApplication4/ConsoleApplication4.sln
+  - mono /home/travis/build/radkoncy/test-travis/testrunner/xunit.runners.2.0.0 ./testrunner/xunit.runners.2.0.0/tools/xunit.console.exe ./csharp-extensions-test/bin/Release/csharp-extensions-tests.dll
 notifications:
   email: false
